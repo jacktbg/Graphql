@@ -25,11 +25,7 @@ export const Content: React.FC = () => {
   })
 
   if (!id) {
-    return (
-      <main className={styles.main}>
-        <p>Select a character to view details</p>
-      </main>
-    )
+    return <main className={styles.main}></main>
   }
 
   if (loading) {
