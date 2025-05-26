@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../assets/sf-pro-display/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../assets/sf-pro-display/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../assets/sf-pro-display/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+table,
+tr,
+td,
+th {
+  all: unset;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  scroll-behavior: smooth;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+:root {
+  --lc-background: rgba(18, 18, 18, 1);
+  --lc-title: rgba(242, 242, 242, 1);
+  --lc-main: #ffffff;
+  --lc-text: #333333;
+  --lc-text-secondary: #828282;
+  --lc-border: #00000026;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --lc-background: #121212;
+  --lc-title: rgba(242, 242, 242, 1);
+  --lc-main: #1f1f1f;
+  --lc-text: #f2f2f2;
+  --lc-secondary-text: #ffffff;
+  --lc-border: #fcc1c1;
+}
+
+html,
+body {
+  z-index: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+ol {
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+  table,
+  tr,
+  td,
+  th {
+    all: unset;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    scroll-behavior: smooth;
+    font-family: "Inter", sans-serif;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ol {
+    list-style-type: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  table,
+  tr,
+  td,
+  th {
+    display: block;
+  }
+
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+table,
+tr,
+td,
+th {
+  display: block;
+}
