@@ -1,8 +1,8 @@
+import styles from "../styles/content.module.css"
 import { useQuery } from "@apollo/client"
-import { useCharacterStore } from "../../../store/useStore"
-import styles from "../../styles/content.module.css"
-import { GET_CHARACTER } from "../../../graphql/queries"
-import type { item } from "../../../types/item"
+import type { item } from "../../types/item"
+import { useCharacterStore } from "../../store/useStore"
+import { GET_CHARACTER } from "../../graphql/queries"
 
 const fieldInformation: {
   label: string

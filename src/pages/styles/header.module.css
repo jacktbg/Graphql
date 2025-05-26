@@ -1,8 +1,9 @@
 .header {
+  position: absolute;
   background-color: var(--lc-background);
   color: var(--lc-title);
   width: 100%;
-  height: clamp(5rem, 10%, 60rem);
+  height: clamp(5rem, 5.779%, 60rem);
   display: flex;
   align-items: center;
   justify-content: start;
@@ -29,13 +30,13 @@
 @media (min-width: 3000px) {
   .header {
     width: 100%;
-    height: clamp(5rem, 10%, 60rem);
+    height: clamp(5rem, 10%, 22rem);
   }
 
   .title {
     margin-left: clamp(1rem, 16.6%, 90rem);
     height: clamp(2rem, 4vw, 40rem);
-    font-size: clamp(1.8rem, 1.8vw, 30rem);
+    font-size: clamp(1.8rem, 1.8vw, 5rem);
     ;
   }
 }

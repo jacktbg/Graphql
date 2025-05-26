@@ -6,6 +6,7 @@
 }
 
 .body {
+  padding-top: clamp(5rem, 3.2%, 50rem);
   display: flex;
   justify-content: center;
   overflow: hidden;

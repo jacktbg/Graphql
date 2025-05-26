@@ -15,6 +15,7 @@ export const Sidebar: React.FC = () => {
     item[]
   >([])
   const [hasMore, setHasMore] = useState(true)
+  const [isFirstLoad, setIsFirstLoad] = useState(true) // <-- NEW
   const sidebarRef = useRef<HTMLElement>(null)
 
   const { data, loading, error, fetchMore } = useQuery(
@@ -27,20 +28,24 @@ export const Sidebar: React.FC = () => {
 
   const setId = useCharacterStore((state) => state.setId)
 
-  // Load initial + append on fetchMore
   useEffect(() => {
     if (data?.characters?.results) {
-      setAllCharacters((prev) => [
-        ...prev,
-        ...data.characters.results,
-      ])
+      setAllCharacters((prev) => {
+        const newCharacters =
+          data.characters.results.filter(
+            (newChar: item) =>
+              !prev.some((char) => char.id === newChar.id)
+          )
+        return [...prev, ...newCharacters]
+      })
       if (!data.characters.info?.next) {
         setHasMore(false)
       }
+      setIsFirstLoad(false) // <-- Update after first load
     }
   }, [data])
 
-  // Infinite scroll
+  // Infinite scroll logic
   const handleScroll = () => {
     const el = sidebarRef.current
     if (
@@ -50,7 +55,6 @@ export const Sidebar: React.FC = () => {
         el.scrollHeight - 100 &&
       !loading
     ) {
-      // Add a 200ms delay before fetching
       setTimeout(() => {
         fetchMore({
           variables: { page: page + 1 },
@@ -68,6 +72,14 @@ export const Sidebar: React.FC = () => {
         el.removeEventListener("scroll", handleScroll)
     }
   }, [hasMore, loading, page])
+
+  // Only show full-screen loading on first load
+  if (loading && isFirstLoad)
+    return (
+      <aside className={styles.lf}>
+        <img src={loadingImg} alt="load" />
+      </aside>
+    )
 
   if (error)
     return (
@@ -101,9 +113,10 @@ export const Sidebar: React.FC = () => {
             </div>
           </li>
         ))}
-        {loading && (
+        {/* Show smaller loading indicator for fetchMore */}
+        {loading && !isFirstLoad && (
           <li className={styles.loading}>
-            <img src={loadingImg} alt="loading" />
+            <img src={loadingImg} alt="loading more" />
           </li>
         )}
       </ul>

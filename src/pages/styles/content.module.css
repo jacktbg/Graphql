@@ -4,6 +4,13 @@
   background: var(--lc-main);
   color: var(--lc-text);
   width: clamp(20rem, 75.7vw, 200rem);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
 }
 
 .information,
