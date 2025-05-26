@@ -9,6 +9,23 @@
   -ms-overflow-style: none;
 }
 
+.lf {
+  display: flex;
+  flex-direction: column;
+  background: var(--lc-main);
+  color: var(--lc-text);
+  width: clamp(20rem, 75.7vw, 200rem);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 2% 0 0 2%;
+}
+
+.lf>img {
+  width: clamp(10rem, 7vw, 30rem);
+
+}
+
 .main::-webkit-scrollbar {
   display: none;
 }

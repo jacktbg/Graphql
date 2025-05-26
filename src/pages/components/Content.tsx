@@ -1,4 +1,6 @@
 import styles from "../styles/content.module.css"
+import loadingImg from "../../assets/loading.svg"
+import failedImg from "../../assets/failed.svg"
 import { useQuery } from "@apollo/client"
 import type { item } from "../../types/item"
 import { useCharacterStore } from "../../store/useStore"
@@ -29,11 +31,19 @@ export const Content: React.FC = () => {
   }
 
   if (loading) {
-    return <main className={styles.main}></main>
+    return (
+      <main className={styles.lf}>
+        <img src={loadingImg} alt="loading" />
+      </main>
+    )
   }
 
   if (error) {
-    return <main className={styles.main}></main>
+    return (
+      <main className={styles.lf}>
+        <img src={failedImg} alt="failed" />
+      </main>
+    )
   }
 
   const character: item = data.character

@@ -6,9 +6,19 @@
 }
 
 .body {
-  padding-top: clamp(5rem, 3.2%, 50rem);
+  padding-top: clamp(5rem, 3.5%, 50rem);
   display: flex;
   justify-content: center;
   overflow: hidden;
   flex-direction: row;
+}
+
+@media (min-width: 3000px) {
+  .body {
+    padding-top: clamp(5rem, 5.6%, 50rem);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row;
+  }
 }
